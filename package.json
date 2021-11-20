@@ -8,7 +8,10 @@
   },
   "scripts": {
     "deploy:local": "npx hardhat run --network localhost scripts/deploy.ts",
-    "deploy:rinkeby": "npx hardhat run --network rinkeby scripts/deploy.ts"
+    "deploy:rinkeby": "npx hardhat run --network rinkeby scripts/deploy.ts",
+    "format": "prettier --write \"{contracts,scripts,test}/**/*{.ts,.sol}\"",
+    "lint:ts": "eslint \"{scripts,test}/**/*{.ts,.sol}\" --fix",
+    "lint:sol": "solhint table contracts/**/*.sol"
   },
   "license": "ISC",
   "devDependencies": {
