@@ -1,7 +1,6 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-import "hardhat/console.sol";
 import "./Ownable.sol";
 
 contract Donator is Ownable {
@@ -9,8 +8,6 @@ contract Donator is Ownable {
     address[] public users;
 
     event Received(address, uint256);
-
-    fallback() external payable {}
 
     receive() external payable {
         if (amountToDonations[msg.sender] == 0) {
