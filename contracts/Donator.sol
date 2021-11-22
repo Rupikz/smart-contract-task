@@ -10,6 +10,7 @@ contract Donator is Ownable {
     event Received(address, uint256);
 
     receive() external payable {
+        require(msg.value > 0, "ERROR: Incorrect donation value.");
         if (amountToDonations[msg.sender] == 0) {
             users.push(msg.sender);
         }
