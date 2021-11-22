@@ -5,6 +5,8 @@ import * as dotenv from "dotenv";
 import "hardhat-gas-reporter";
 import { HardhatUserConfig, task } from "hardhat/config";
 import "solidity-coverage";
+import "./tasks/balance.ts";
+import "./tasks/donate.ts";
 
 dotenv.config();
 
@@ -20,9 +22,8 @@ const config: HardhatUserConfig = {
   solidity: "0.8.4",
   networks: {
     rinkeby: {
-      url: process.env.RINKEBY_URL || "",
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      url: process.env.RINKEBY_URL,
+      accounts: [<string>process.env.PRIVATE_KEY],
     },
   },
   gasReporter: {

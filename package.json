@@ -7,8 +7,8 @@
     "url": "git+https://github.com/Rupikz/smart-contract-task.git"
   },
   "scripts": {
-    "deploy:local": "npx hardhat run --network localhost scripts/deploy.ts",
-    "deploy:rinkeby": "npx hardhat run --network rinkeby scripts/deploy.ts",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "deploy:rinkeby": "hardhat run scripts/deploy.ts --network rinkeby",
     "format": "prettier --write \"{contracts,scripts,test}/**/*{.ts,.sol}\"",
     "lint:ts": "eslint \"{scripts,test}/**/*{.ts,.sol}\" --fix",
     "lint:sol": "solhint table contracts/**/*.sol"
